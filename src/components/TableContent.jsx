@@ -1,15 +1,8 @@
 import Maybe from "components/Maybe";
 
-interface TableContentProps {
-    loading: boolean,
-    loadingText?: string,
-    data: any,
-    colspan: number,
-}
 
-
-export const TableContent = (props: TableContentProps) => {
-    const {loading, loadingText, data, colspan} = props;
+export const TableContent = (props) => {
+    const {loading, loadingText, data, isError, colspan} = props;
 
     return (
         <>
@@ -27,7 +20,7 @@ export const TableContent = (props: TableContentProps) => {
             </Maybe>
 
             
-            <Maybe condition={loading === false && !data}>
+            <Maybe condition={loading === false && isError === true}>
                 <tr className="table-no-data">
                     <td colSpan={colspan}>
                         <div className="table-info">
@@ -36,6 +29,20 @@ export const TableContent = (props: TableContentProps) => {
                                 An error occurred
                                 <br />
                                 Please try again later.
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </Maybe>
+
+            
+            <Maybe condition={loading === false && isError === false && data.length === 0}>
+                <tr className="table-no-data">
+                    <td colSpan={colspan}>
+                        <div className="table-info">
+                            {/* <FontAwesomeIcon icon="unlink" /> */}
+                            <div className="font-bold uppercase">
+                                No data found
                             </div>
                         </div>
                     </td>
