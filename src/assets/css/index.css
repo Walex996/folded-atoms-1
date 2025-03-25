@@ -3,5 +3,159 @@
 @tailwind utilities;
 
 body{
-    @apply bg-red-300;
+    @apply bg-gray-100;
+}
+
+.btn-default {
+    @apply w-max font-medium;
+    @apply flex items-center justify-center space-x-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-opacity-75 cursor-pointer;
+}
+
+.btn {
+    @apply btn-default;
+    @apply btn-md;
+}
+
+.btn,
+.btn * {
+    @apply whitespace-nowrap;
+}
+
+.btn.disabled,
+.btn[disabled] {
+    @apply cursor-default;
+    opacity: 0.7;
+    filter: opacity(70);
+}
+
+@media (min-width: 768px) {
+    .btn-md-lg{
+        @apply btn-lg;
+    }
+}
+
+@media (max-width: 767px) {
+    .btn-md-lg{
+        @apply btn-md;
+    }
+}
+
+.btn-sm {
+    @apply h-7 px-4 text-xs rounded-sm;
+}
+
+.btn-md {
+    @apply h-9 px-5 text-sm rounded-[4px];
+}
+
+.btn-lg {
+    @apply h-12 px-6 text-sm rounded-[6px];
+}
+
+.btn-block {
+    @apply w-full;
+}
+
+.btn-transparent-black {
+    @apply border border-gray-400;
+}
+
+.btn-primary{
+    @apply text-white bg-blue-700;
+}
+
+.table-container {
+    @apply w-full overflow-x-auto overflow-y-hidden;
+}
+
+.table-container > .table th,
+.table-container > .table td {
+    /* @apply w-min whitespace-nowrap; */
+    @apply w-min;
+}
+
+.table {
+    @apply w-full min-w-min rounded-md overflow-hidden;
+    border-collapse: separate;
+    /* border-spacing: 0 12px; */
+    border-spacing: 0 0;
+}
+
+.table thead {
+    @apply border-b;
+}
+
+.table thead th {
+    @apply p-4 text-sm text-left font-bold;
+}
+
+.table tbody {
+    /* @apply bg-white; */
+}
+
+.table tbody tr {
+    /* @apply border-t border-b border-black !important; */
+}
+
+.table tbody tr:not(.table-no-data):hover {
+    @apply bg-gray-100;
+}
+
+.table tbody tr td {
+    @apply p-4 text-sm text-left;
+    @apply border-t border-gray-200;
+}
+
+.table.table-border tbody tr.table-row-space {
+    @apply h-3 invisible !important;
+}
+
+.table.table-border tbody > tr > td {
+    /* @apply border-t border-b border-gray-200 overflow-hidden !important; */
+}
+
+.table.table-rounded tbody > tr > td:first-child{
+    /* @apply border-l rounded-tl-lg rounded-bl-lg; */
+}
+
+.table.table-rounded tbody > tr > td:last-child{
+    /* @apply border-r rounded-tr-lg rounded-br-lg; */
+}
+
+.table.table-align-top td {
+    @apply align-top;
+}
+
+.table td .table-dropdown-align-top {
+    @apply -mt-2;
+}
+
+.table-info-full-page {
+    @apply box;
+    @apply py-24 mt-6;
+}
+
+.table-info {
+    @apply px-2 py-10 mt-3 text-center text-gray-500;
+}
+
+.table-info > svg {
+    @apply text-4xl mb-2;
+}
+
+.box-border-only{
+    @apply bg-white rounded-md border;
+    /* border-color: #9CA3AF; */
+}
+
+.box-default-overflow {
+    @apply p-4 sm:p-6 box-border-only;
+}
+
+.box {
+    @apply box-default-overflow overflow-hidden;
+}
+
+.box-no-padding {
+    @apply p-0 xl:p-0;
 }
