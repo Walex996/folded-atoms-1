@@ -7,7 +7,8 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <h1>Editable Users Table</h1>
+      <h1 style={{fontWeight: "bold"}}>Editable Users Table</h1>
+      <br />
       <Users />
     </QueryClientProvider>
   );
